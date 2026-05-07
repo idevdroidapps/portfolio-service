@@ -128,20 +128,22 @@ const { resumeUrl, previewUrl } = Astro.props;
 	/* Adjust for smaller mobile screens */
 	@media (max-width: 720px) {
 		.resume-viewer {
-			height: 80vh;
+			height: 85vh;
 			border-radius: 0;
 			border-left: none;
 			border-right: none;
-			padding-top: 1rem;
+			padding-top: 0;
 			overflow: hidden;
+			position: relative;
 		}
 		.preview-iframe {
-			/* Force the iframe to be wider so Google Drive renders the full page, 
-			   then scale it down to fit the mobile screen width */
-			width: 160%;
-			height: 160%;
-			transform: scale(0.625);
-			transform-origin: top left;
+			/* Remove the scale hack so text isn't tiny.
+			   Use negative margins to crop out Google Drive's gray borders and maximize PDF size. */
+			width: calc(100% + 20px);
+			height: calc(100% + 20px);
+			margin-left: -10px;
+			margin-top: -10px;
+			border: none;
 		}
 		.resume-container {
 			gap: 1rem;
