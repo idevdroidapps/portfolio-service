@@ -133,6 +133,15 @@ const { resumeUrl, previewUrl } = Astro.props;
 			border-left: none;
 			border-right: none;
 			padding-top: 1rem;
+			overflow: hidden;
+		}
+		.preview-iframe {
+			/* Force the iframe to be wider so Google Drive renders the full page, 
+			   then scale it down to fit the mobile screen width */
+			width: 160%;
+			height: 160%;
+			transform: scale(0.625);
+			transform-origin: top left;
 		}
 		.resume-container {
 			gap: 1rem;
