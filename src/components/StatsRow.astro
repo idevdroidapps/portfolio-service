@@ -1,0 +1,67 @@
+---
+const stats = [
+	{ label: 'Years Experience', value: '12+' },
+	{ label: 'Millions of Users', value: '50M+' },
+	{ label: 'Citizenship', value: 'U.S.A.' }
+];
+---
+
+<section class="stats-row">
+	{stats.map(stat => (
+		<div class="stat-card">
+			<span class="value">{stat.value}</span>
+			<span class="label">{stat.label}</span>
+		</div>
+	))}
+</section>
+
+<style>
+	.stats-row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+		margin: 4rem 0;
+	}
+
+	.stat-card {
+		background-color: var(--md-surface-container-low);
+		padding: 2rem;
+		border-radius: 16px;
+		text-align: center;
+		border: 1px solid var(--md-outline-variant);
+		transition: background-color 0.2s ease;
+	}
+
+	.stat-card:hover {
+		background-color: var(--md-surface-container);
+	}
+
+	.value {
+		display: block;
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--md-primary);
+		line-height: 1;
+		margin-bottom: 0.5rem;
+	}
+
+	.label {
+		font-size: 1rem;
+		color: var(--md-on-surface-variant);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	@media (max-width: 768px) {
+		.stats-row {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.stats-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

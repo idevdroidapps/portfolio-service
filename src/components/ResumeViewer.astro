@@ -1,0 +1,144 @@
+---
+interface Props {
+	resumeUrl: string;
+	previewUrl?: string;
+}
+
+const { resumeUrl, previewUrl } = Astro.props;
+---
+
+<div class="resume-container">
+	<div class="viewer-actions">
+		<a href={resumeUrl} download class="button primary download-btn">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="20"
+				height="20"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline
+					points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg
+			>
+			Download CV
+		</a>
+	</div>
+
+	<div class="resume-viewer">
+		<!-- Use the public previewUrl if available, otherwise fallback to local resumeUrl -->
+		<iframe
+			src={previewUrl || resumeUrl}
+			style="width:100%; height:100%;"
+			frameborder="0"
+			allow="autoplay"
+			class="preview-iframe"></iframe>
+	</div>
+</div>
+
+<style>
+	.resume-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		width: 100%;
+	}
+
+	.viewer-actions {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.download-btn {
+		gap: 0.5rem;
+	}
+
+	.resume-viewer {
+		width: 100%;
+		height: 120vh;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: var(--elevation-2);
+		background-color: #202124;
+		border: 1px solid var(--md-outline-variant);
+		display: flex;
+		flex-direction: column;
+		padding-top: 3rem;
+	}
+
+	.preview-iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+		display: block;
+	}
+
+	.pdf-object {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	.fallback {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 2rem;
+		text-align: center;
+		background-color: var(--md-surface-container-high);
+	}
+
+	.fallback-content p {
+		margin-bottom: 1.5rem;
+		color: var(--md-on-surface-variant);
+	}
+
+	.button {
+		padding: 0.75rem 1.5rem;
+		border-radius: 100px;
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.2s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+
+	.button.primary {
+		background-color: var(--md-primary);
+		color: var(--md-on-primary);
+	}
+
+	.button.secondary {
+		background-color: var(--md-surface-variant);
+		color: var(--md-on-surface-variant);
+		border: 1px solid var(--md-outline);
+	}
+
+	.button:hover {
+		filter: brightness(1.1);
+		transform: translateY(-1px);
+		box-shadow: var(--elevation-1);
+	}
+
+	/* Adjust for smaller mobile screens */
+	@media (max-width: 720px) {
+		.resume-viewer {
+			height: 80vh;
+			border-radius: 0;
+			border-left: none;
+			border-right: none;
+			padding-top: 1rem;
+		}
+		.resume-container {
+			gap: 1rem;
+		}
+		.viewer-actions {
+			padding: 0 1rem;
+		}
+	}
+</style>

@@ -1,0 +1,90 @@
+---
+const skillGroups = [
+	{
+		title: 'Languages',
+		skills: ['Kotlin', 'Swift', 'Java', 'Python', 'JavaScript', 'SQL' ]
+	},
+	{
+		title: 'AI & Automation',
+		skills: ['Agentic AI Systems', 'Local LLMs', 'n8n', 'ComfyUI', 'Open-WebUI', 'OpenClaw']
+	},
+	{
+		title: 'Architecture & Systems',
+		skills: ['Clean Architecture', 'SOLID Principles', 'Android Automotive (AAOS)', 'Reactive Programming', 'Kotlin Multiplatform']
+	},
+	{
+		title: 'Tools & Frameworks',
+		skills: ['CI/CD', 'Git', 'Gradle', 'Android Studio', 'Firebase', 'Jetpack Compose', 'PostgreSQL', 'REST', 'GraphQL']
+	}
+];
+---
+
+<section class="skills-section">
+	<h2 class="section-title">Core Expertise</h2>
+	<div class="skills-grid">
+		{skillGroups.map(group => (
+			<div class="skill-group">
+				<h3>{group.title}</h3>
+				<div class="chips">
+					{group.skills.map(skill => (
+						<span class="chip">{skill}</span>
+					))}
+				</div>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	.skills-section {
+		margin: 6rem 0;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+		gap: 3rem;
+	}
+
+	.skill-group h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+		color: var(--md-primary);
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.chip {
+		padding: 0.5rem 1.25rem;
+		background-color: var(--md-secondary-container);
+		color: var(--md-on-secondary-container);
+		border-radius: 100px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		transition: transform 0.2s ease, filter 0.2s ease;
+	}
+
+	.chip:hover {
+		transform: scale(1.05);
+		filter: brightness(1.05);
+	}
+
+	@media (max-width: 1024px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>

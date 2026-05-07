@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/ProjectPost.astro';
+import ResumeViewer from '../components/ResumeViewer.astro';
+
+const resumeUrl = '/james_campbell_field_resume.pdf';
+---
+
+<Layout
+	title="Resume"
+	description="My Professional Resume - James Campbell"
+>
+	<div class="resume-wrapper">
+		<ResumeViewer resumeUrl={resumeUrl} />
+	</div>
+</Layout>
+
+<style is:global>
+	/* Override ProjectPost layout restrictions for the resume page */
+	.prose:has(.resume-wrapper) {
+		width: 100%;
+		max-width: 1000px;
+	}
+
+	/* Hide the default title and divider for the resume page */
+	.prose:has(.resume-wrapper) .title {
+		display: none;
+	}
+
+	@media (max-width: 720px) {
+		main:has(.resume-wrapper) {
+			padding-left: 0;
+			padding-right: 0;
+			max-width: 100%;
+		}
+		.resume-wrapper {
+			padding: 0;
+		}
+	}
+</style>
