@@ -1,13 +1,12 @@
 ---
 title: "Independent Freelance"
-description: "Agentic Automation Development | Hollywood, FL | September 2025 – Present"
+description: "Field Systems Integration & Deployment Engineer | Hollywood, FL | September 2025 – Present"
 pubDate: "Sep 01 2025"
 heroImage: "/independent-freelance-present.png"
 ---
 
-- Designed and deployed end-to-end **agentic AI automation systems** using n8n and local LLMs utilizing Ollama, **reducing manual content production effort by ~40–60%**.
-- Built **privacy-first AI pipelines** eliminating reliance on external APIs, improving data security and **reducing operational costs by ~30–50%**.
-- Developed and optimized generative **media workflows** with ComfyUI, increasing **content throughput by ~2–3x**.
-- Integrated and evaluated emerging AI tools, accelerating experimentation cycles and **reducing implementation time for new workflows by ~25%**.
-
-
+- **On-Site System Deployment**: Managed the physical installation and hardware commissioning of Ubuntu-based edge compute nodes, including rack mounting, cable management, and network infrastructure integration.
+- **Hardware Bring-Up & Validation**: Performed end-to-end hardware initialization, including BIOS/UEFI optimization and peripheral stress testing to ensure stability in high-duty-cycle environments.
+- **Field Diagnostics & Recovery**: Utilized Linux CLI tools to perform real-time hardware health monitoring, identifying and mitigating thermal throttling and power distribution issues to maintain ~99% uptime.
+- **Preventive Maintenance**: Executed scheduled hardware audits, log analysis, and physical inspections to identify wear-and-tear in deployed infrastructure before failure.
+- **Infrastructure Integration**: Configured local storage arrays and hardware-level data persistence layers to ensure system reliability in offline or intermittent-connectivity environments.
