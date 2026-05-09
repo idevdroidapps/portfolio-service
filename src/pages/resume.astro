@@ -3,7 +3,6 @@ import Layout from '../layouts/ProjectPost.astro';
 import ResumeViewer from '../components/ResumeViewer.astro';
 
 const resumeUrl = '/james_campbell_field_resume.pdf';
-const previewUrl = 'https://drive.google.com/file/d/1AoEawyD70z_lh_1U19KUwJQuuKfdOhKG/preview';
 ---
 
 <Layout
@@ -11,7 +10,7 @@ const previewUrl = 'https://drive.google.com/file/d/1AoEawyD70z_lh_1U19KUwJQuuKf
 	description="My Professional Resume - James Campbell"
 >
 	<div class="resume-wrapper">
-		<ResumeViewer resumeUrl={resumeUrl} previewUrl={previewUrl} />
+		<ResumeViewer resumeUrl={resumeUrl} />
 	</div>
 </Layout>
 
