@@ -3,7 +3,7 @@ interface Props {
 	resumeUrl: string;
 }
 
-const { resumeUrl, previewUrl } = Astro.props;
+const { resumeUrl } = Astro.props;
 ---
 
 <div class="resume-container">
@@ -26,6 +26,8 @@ const { resumeUrl, previewUrl } = Astro.props;
 		</a>
 	</div>
 
+	const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james_campbell_field_resume.pdf';
+
 	<div class="resume-viewer">
 		<iframe
 			src={resumeUrl}
@@ -34,14 +36,11 @@ const { resumeUrl, previewUrl } = Astro.props;
 			allow="autoplay"
 			class="preview-iframe"
 		></iframe>
-		<object
-			type="application/pdf"
-			data={resumeUrl}
-			class="fallback-pdf"
-			style="width:100%; height:100%; display:none;"
-		>
-			<p>Your browser cannot display PDFs inline. <a href={resumeUrl}>Open the file</a>.</p>
-		</object>
+			<iframe
+				src={cloudflareUrl}
+				class="cloudflare-iframe"
+				style="width:100%; height:100%; border:none; display:none;"
+			></iframe>
 	</div>
 </div>
 
@@ -75,7 +74,7 @@ const { resumeUrl, previewUrl } = Astro.props;
 		padding-top: 3rem;
 	}
 
-	.preview-iframe {
+	.cloudflare-iframe { display: none; }
 		width: 100%;
 		height: 100%;
 		border: none;
@@ -144,10 +143,15 @@ const { resumeUrl, previewUrl } = Astro.props;
       position: relative;
     }
     .preview-iframe {
-      display: none;
-    }
-    .fallback-pdf {
+  display: none;
+}
+.cloudflare-iframe {
+  display: block;
+}
+    .mobile-fallback {
       display: block;
+      text-align: center;
+      margin-top: 1rem;
     }
     .resume-container {
       gap: 1rem;
