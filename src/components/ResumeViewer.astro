@@ -30,109 +30,96 @@ const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james
 	
 
 <div class="resume-viewer">
-  <iframe
-    src={resumeUrl}
+  <object
+    data={cloudflareUrl}
+    type="application/pdf"
     style="width:100%; height:100%;"
-    frameborder="0"
-    allow="autoplay"
-    class="preview-iframe"
-  ></iframe>
-  <iframe
-    src={cloudflareUrl}
-    class="cloudflare-iframe"
-    style="width:100%; height:100%; border:none;"
-  ></iframe>
+  >
+    <p>Unable to display PDF. <a href={cloudflareUrl}>Download</a> instead.</p>
+  </object>
 </div>
 </div>
 
 <style>
-	.resume-container {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		width: 100%;
-	}
+  .resume-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
 
-	.viewer-actions {
-		display: flex;
-		justify-content: flex-end;
-	}
+  .viewer-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-	.download-btn {
-		gap: 0.5rem;
-	}
+  .download-btn {
+    gap: 0.5rem;
+  }
 
-	.resume-viewer {
-		width: 100%;
-		height: 120vh;
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: var(--elevation-2);
-		background-color: #202124;
-		border: 1px solid var(--md-outline-variant);
-		display: flex;
-		flex-direction: column;
-		padding-top: 3rem;
-	}
+  .resume-viewer {
+    width: 100%;
+    height: 120vh;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--elevation-2);
+    background-color: #202124;
+    border: 1px solid var(--md-outline-variant);
+    position: relative;
+  }
 
-.cloudflare-iframe {
-  display: none;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+  object {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+  }
 
-.pdf-object {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
+  .fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--md-surface-container-high);
+  }
 
-	.fallback {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		padding: 2rem;
-		text-align: center;
-		background-color: var(--md-surface-container-high);
-	}
+  .fallback-content p {
+    margin-bottom: 1.5rem;
+    color: var(--md-on-surface-variant);
+  }
 
-	.fallback-content p {
-		margin-bottom: 1.5rem;
-		color: var(--md-on-surface-variant);
-	}
+  .button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-	.button {
-		padding: 0.75rem 1.5rem;
-		border-radius: 100px;
-		font-weight: 500;
-		text-decoration: none;
-		transition: all 0.2s ease;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-	}
+  .button.primary {
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+  }
 
-	.button.primary {
-		background-color: var(--md-primary);
-		color: var(--md-on-primary);
-	}
+  .button.secondary {
+    background-color: var(--md-surface-variant);
+    color: var(--md-on-surface-variant);
+    border: 1px solid var(--md-outline);
+  }
 
-	.button.secondary {
-		background-color: var(--md-surface-variant);
-		color: var(--md-on-surface-variant);
-		border: 1px solid var(--md-outline);
-	}
+  .button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: var(--elevation-1);
+  }
 
-	.button:hover {
-		filter: brightness(1.1);
-		transform: translateY(-1px);
-		box-shadow: var(--elevation-1);
-	}
-
-/* Adjust for smaller mobile screens */
+  /* Adjust for smaller mobile screens */
   @media (max-width: 720px) {
     .resume-viewer {
       height: 85vh;
@@ -142,23 +129,6 @@ const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james
       padding-top: 0;
       overflow: hidden;
       position: relative;
-    }
-    .preview-iframe {
-      display: none;
-    }
-    .cloudflare-iframe {
-      display: block;
-    }
-    .mobile-fallback {
-      display: block;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .resume-container {
-      gap: 1rem;
-    }
-    .viewer-actions {
-      padding: 0 1rem;
     }
   }
 </style>
