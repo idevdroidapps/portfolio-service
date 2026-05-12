@@ -1,44 +1,28 @@
-# Astro Starter Kit: Blog
+# Field Service Engineer Portfolio
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+This is the source code for my professional portfolio website, built with [Astro](https://astro.build/) and deployed on [Cloudflare Workers](https://workers.cloudflare.com/).
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+**Live Site:** [portfolio-service.idevdroidapps.workers.dev](https://portfolio-service.idevdroidapps.workers.dev/)
 
-<!-- dash-content-start -->
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+## 👨‍💻 About Me
 
-Features:
+I am a Field Service Engineer with over 20 years of experience providing technical support, maintenance, and installation services for industrial and commercial equipment. I specialize in troubleshooting complex systems, preventive maintenance programs, and delivering exceptional customer service, with a recent focus on IoT-enabled equipment monitoring and predictive maintenance technologies.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
+## 🚀 Key Features
 
-<!-- dash-content-end -->
+- **Project Showcase**: Detailed history of my professional work experience, listed in reverse chronological order.
+- **Integrated Resume**: Seamless access to my professional resume (PDF) directly within the site.
+- **Modern Tech Stack**: Built with Astro 5 for superior performance and SEO.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
+- **Clean Architecture**: Follows best practices for modularity and maintainability.
 
-## Getting Started
+## 🛠️ Tech Stack
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
-```
-
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
-
-## 🚀 Project Structure
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
+- **Framework**: [Astro 5](https://astro.build/)
+- **Styling**: Vanilla CSS with Material Design 3 influences.
+- **Content**: Markdown-driven content collections for projects.
+- **Deployment**: [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/)
 
 ## 🧞 Commands
 
@@ -51,14 +35,15 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`                   | Build your production site to `./dist/`          |
 | `npm run preview`                 | Preview your build locally, before deploying     |
 | `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
 | `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
 
-## 👀 Want to learn more?
+## 📂 Project Structure
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `src/content/projects/`: Contains the markdown files for each professional experience.
+- `src/pages/`: Astro pages defining the site routes.
+- `src/layouts/`: Reusable page layouts.
+- `public/`: Static assets including images and the PDF resume.
 
-## Credit
+---
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+*Built with ❤️ by Field Service Engineer*
