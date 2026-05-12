@@ -30,13 +30,18 @@ const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james
 	
 
 <div class="resume-viewer">
-  <object
-    data={cloudflareUrl}
+  <embed
+    src={resumeUrl}
     type="application/pdf"
     style="width:100%; height:100%;"
-  >
-    <p>Unable to display PDF. <a href={cloudflareUrl}>Download</a> instead.</p>
-  </object>
+    class="desktop-preview"
+  ></embed>
+  <embed
+    src={cloudflareUrl}
+    type="application/pdf"
+    style="width:100%; height:100%;"
+    class="mobile-preview"
+  ></embed>
 </div>
 </div>
 
@@ -68,12 +73,18 @@ const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james
     position: relative;
   }
 
-  object {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-  }
+.desktop-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mobile-preview {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border: none;
+}
 
   .fallback {
     display: flex;
@@ -129,6 +140,12 @@ const cloudflareUrl = 'https://pub-9f66ad9f70ee42cd84144827f8c0d155.r2.dev/james
       padding-top: 0;
       overflow: hidden;
       position: relative;
+    }
+    .desktop-preview {
+      display: none;
+    }
+    .mobile-preview {
+      display: block;
     }
   }
 </style>
